@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{Title}</title>
+<style>
+
+.post {
+    
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <h2><a href="{BlogURL}">{Title}</a></h2>
+        {block:description}{description}{/block:description}
+    </header>
+	
+    {block:HasPages}
+        {block:pages}<a href="{URL}">{Label}</a>{/block:Pages}
+    {/block:hasPages}
+	
+	{block:AskEnabled}
+	<a href="{Permalink}">{AskLabel}</a>
+    {/block:AskEnabled}
+    
+    {block:SubmissionsEnabled} 
+    <a href="{Permalink}">{SubmitLabel}</a>
+    {/block:SubmissionsEnabled}
+
+	{block:Posts}
+	    {block:Text}
+	    <div class="posts">
+	        {block:Title}
+	            <a href="{Permalink}">{Title}</a>
+	        {/block:Title}
+	        {Body}
+	   </div>
+	   
+	   <div class="like-reblog">
+	        <ul>
+	            <div class="like-reblog-items">
+	            <li>{LikeButton}</li>
+	            <li>{ReblogButton}</li>
+	            <li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+	            <li>{block:Date}<a href="{Permalink}">{24Hour}:{Minutes}, {DayOfMonth} {Month} {Year}</a>{/block:Date}</li>
+	            </div>
+	        </ul>
+	   </div>
+	   	{block:PostNotes}{PostNotes}{/block:PostNotes}
+	    {/block:Text}
+
+        {block:Photo}
+       <div class="posts">
+            <img src="{PhotoURL-400}">
+            {block:Caption}{Caption}{/block:Caption}
+        </div>
+        
+        <div class="like-reblog">
+	        <ul>
+	            <div class="like-reblog-items">
+	            <li>{LikeButton}</li>
+	            <li>{ReblogButton}</li>
+	            <li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+	            <li>{block:Date}<a href="{Permalink}">{24Hour}:{Minutes}, {DayOfMonth} {Month} {Year}</a>{/block:Date}</li>
+	            </div>
+	        </ul>
+	   </div>
+	   	{block:PostNotes}{PostNotes}{/block:PostNotes}
+        {/block:Photo}
+        
+        {block:Quote}
+	    <div class="posts">
+            {Quote}
+            {block:Source}<br>&mdash;
+            {Source}
+            {/block:Source}
+        </div>
+        
+        <div class="like-reblog">
+	        <ul>
+	            <div class="like-reblog-items">
+	            <li>{LikeButton}</li>
+	            <li>{ReblogButton}</li>
+	            <li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+	            <li>{block:Date}<a href="{Permalink}">{24Hour}:{Minutes}, {DayOfMonth} {Month} {Year}</a>{/block:Date}</li>
+	            </div>
+	        </ul>
+	   </div>
+	   	{block:PostNotes}{PostNotes}{/block:PostNotes}
+        {/block:Quote}
+        
+        {block:Link}
+	    <div class="posts">
+            <a href="{URL}"{Target}>{Name}</a>
+            {block:Description}{Description}{/block:Description}
+        </div>
+        
+        <div class="like-reblog">
+	        <ul>
+	            <div class="like-reblog-items">
+	            <li>{LikeButton}</li>
+	            <li>{ReblogButton}</li>
+	            <li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+	            <li>{block:Date}<a href="{Permalink}">{24Hour}:{Minutes}, {DayOfMonth} {Month} {Year}</a>{/block:Date}</li>
+	            </div>
+	        </ul>
+	   </div>
+	   	{block:PostNotes}{PostNotes}{/block:PostNotes}
+        {/block:Link}
+        
+        {block:Chat}
+	    <div class="posts">
+            <table>
+                {block:Lines}
+                <tr>
+                    <th>{block:Label}{Label}{/block:Label}</th>
+                    <td>{Line}</td>
+                </tr>
+                {/block:Lines}
+            </table>
+        </div>
+        
+        <div class="like-reblog">
+	        <ul>
+	            <div class="like-reblog-items">
+	            <li>{LikeButton}</li>
+	            <li>{ReblogButton}</li>
+	            <li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+	            <li>{block:Date}<a href="{Permalink}">{24Hour}:{Minutes}, {DayOfMonth} {Month} {Year}</a>{/block:Date}</li>
+	            </div>
+	        </ul>
+	   </div>
+	   	{block:PostNotes}{PostNotes}{/block:PostNotes}
+        {/block:Chat}
+        
+        {block:Video}
+	    <div class="posts">
+            {Video-400}
+            {block:Caption}{Caption}{/block:Caption}
+        </div>
+        
+        <div class="like-reblog">
+	        <ul>
+	            <div class="like-reblog-items">
+	            <li>{LikeButton}</li>
+	            <li>{ReblogButton}</li>
+	            <li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+	            <li>{block:Date}<a href="{Permalink}">{24Hour}:{Minutes}, {DayOfMonth} {Month} {Year}</a>{/block:Date}</li>
+	        </ul>
+	   </div>
+	   	{block:PostNotes}{PostNotes}{/block:PostNotes}
+        {/block:Video}
+        
+        {block:Audio}
+		<div class="post">
+			{AudioPlayer}
+      	    {block:Caption}{Caption}{/block:Caption}
+      	    <div class="like-reblog">
+			<ul>
+			    <div class="like-reblog-items">
+				<li>{LikeButton}</li>
+				<li>{ReblogButton}</li>
+				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
+				<li>{block:Date}<a href="{Permalink}">{24Hour}:{Minutes}, {DayOfMonth} {Month} {Year}</a>{/block:Date}</li>
+				</div>
+			</ul>
+			</div>
+		</div>
+		{block:PostNotes}{PostNotes}{/block:PostNotes}
+		{/block:Audio}
+        
+    {/block:Posts}
+	
+	{block:Pagination}
+	<div class="pagenav">
+	{block:PreviousPage}<a href="{PreviousPage}">Older</a>{/block:PreviousPage}
+	{block:NextPage}<a href="{NextPage}">Newer</a>{/block:NextPage}
+	</div>
+	{/block:Pagination}
+	
+</body>
+</html>
